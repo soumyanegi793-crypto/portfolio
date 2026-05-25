@@ -987,11 +987,11 @@
         z-index: 1;
       }
       .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        align-items: start;
-      }
+  display: grid;
+  grid-template-columns: minmax(0, 720px);
+  gap: 0;
+  align-items: start;
+}
       .contact-text {
         font-size: 1.05rem;
         color: #aaa;
@@ -1770,46 +1770,6 @@
               </a>
             </div>
           </div>
-          <div class="contact-form-side reveal-right">
-            <div class="form-group">
-              <label class="form-label" for="name">Your Name</label>
-              <input
-                class="form-input"
-                type="text"
-                id="name"
-                placeholder="John Doe"
-              />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email">Email Address</label>
-              <input
-                class="form-input"
-                type="email"
-                id="email"
-                placeholder="hello@example.com"
-              />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="project">Project Type</label>
-              <input
-                class="form-input"
-                type="text"
-                id="project"
-                placeholder="Reels, YouTube Video, etc."
-              />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="message">Message</label>
-              <textarea
-                class="form-textarea"
-                id="message"
-                placeholder="Tell me about your project..."
-              ></textarea>
-            </div>
-            <button class="form-btn" onclick="handleFormSubmit(this)">
-              Send Message →
-            </button>
-          </div>
         </div>
       </div>
     </section>
@@ -2165,25 +2125,6 @@
       function closeMobileMenu() {
         document.getElementById("mobileMenu").classList.remove("open");
       }
-
-      // ── FORM SUBMIT ──
-      function handleFormSubmit(btn) {
-        const orig = btn.textContent;
-        btn.textContent = "Sending...";
-        btn.style.background = "#333";
-        btn.style.color = "var(--accent)";
-        setTimeout(() => {
-          btn.textContent = "Message Sent ✓";
-          btn.style.background = "var(--accent)";
-          btn.style.color = "var(--bg)";
-          setTimeout(() => {
-            btn.textContent = orig;
-            btn.style.background = "";
-            btn.style.color = "";
-          }, 3000);
-        }, 1500);
-      }
-
       // ── MAGNETIC BUTTONS ──
       document
         .querySelectorAll(".btn-primary, .btn-ghost, .nav-cta")
